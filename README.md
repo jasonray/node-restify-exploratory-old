@@ -76,6 +76,8 @@ POST
 server.post('/order', placeOrder);
 ```
 
+See http://mcavage.me/node-restify/#Routing
+
 Query params
 ------------
 Restify allows you to access query params by using `req.query.m` (where `m` is the query param).  In order for restify to parse the query parameters, you must instruct it to do so during initialization `server.use(restify.queryParser())`.
