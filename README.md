@@ -56,3 +56,30 @@ Returns the sum of two variables
 ```
 curl -i -H "Content-Type: application/json" http://hostname/resource
 ```
+
+Restify notes
+=============
+Register URL to a javascript method
+-----------------------------------
+GET (where `echo` is a javascript method
+```
+server.get('/echo', echo);
+```
+
+GET with path params (where `echo` is a javascript method
+```
+server.get('/echo/:message', echo);
+```
+
+POST
+```
+server.post('/order', placeOrder);
+```
+
+Query params
+------------
+Restify allows you to access query params by using `req.query.m` (where `m` is the query param).  In order for restify to parse the query parameters, you must instruct it to do so during initialization `server.use(restify.queryParser())`.
+
+Path params
+-----------
+Restify allows you to access path params.  First, during the regitration of the URL pattern to method, declare a variable name for the path param `server.get('/echo/:message', echo);`.  In your method, access the path param `req.params.message`.
