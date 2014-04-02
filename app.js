@@ -3,8 +3,8 @@ var restify = require('restify');
 var server = restify.createServer();
 server.use(restify.queryParser());
 
-server.get('/add', add);
-server.get('/subtract', subtract);
+server.post('/add', add);
+server.post('/subtract', subtract);
 
 server.get('/echo', echo);
 server.head('/echo', echo);
