@@ -22,9 +22,35 @@ Returns the string sent in the "m" query string or as the path param
 ```
 curl http://localhost:8080/echo?m=hello
 ```
-yields: `"hello"`
+yields:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 7
+Date: Wed, 02 Apr 2014 17:37:20 GMT
+Connection: keep-alive
+
+"hello"
+```
 
 ```
-curl http://localhost:8080/echo/hello
+curl -i http://localhost:8080/echo/hello
 ```
-yields: `"hello"`
+yields: 
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 7
+Date: Wed, 02 Apr 2014 17:37:20 GMT
+Connection: keep-alive
+
+"hello"
+```
+
+Add
+---
+Returns the sum of two variables
+
+```
+curl -i -H "Content-Type: application/json" http://hostname/resource
+```
