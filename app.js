@@ -1,15 +1,17 @@
 var restify = require('restify');
 
-function respond(req, res, next) {
+function echo(req, res, next) {
 	console.log('req: [%s]', req);
 	console.log('res: [%s]', res);
-	res.send('hello ' + req.params.name);
+	var message = req.params.message;
+	console.log('message: %s', message);
+	res.send(message);
 	next();
 }
 
 var server = restify.createServer();
-server.get('/hello/:name', respond);
-server.head('/hello/:name', respond);
+server.get('/echo/:message', echo);
+server.head('/echo/:message', echo);
 
 server.listen(8080, function() {
 	console.log('%s listening at %s', server.name, server.url);
