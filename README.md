@@ -19,6 +19,7 @@ Echo
 ----
 Returns the string sent in the "m" query string or as the path param
 
+With query param:
 ```
 curl http://localhost:8080/echo?m=hello
 ```
@@ -33,6 +34,7 @@ Connection: keep-alive
 "hello"
 ```
 
+With path param:
 ```
 curl -i http://localhost:8080/echo/hello
 ```
