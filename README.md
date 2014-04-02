@@ -51,8 +51,20 @@ Add
 ---
 Returns the sum of two variables
 
+(note: I escaped the `&` because it was causing me issues)
 ```
-curl -i -H "Content-Type: application/json" http://hostname/resource
+curl -i -X POST http://localhost:8080/add?y=3\&x=5
+```
+
+yields:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 3
+Date: Wed, 02 Apr 2014 18:02:54 GMT
+Connection: keep-alive
+
+"8"
 ```
 
 Restify notes
