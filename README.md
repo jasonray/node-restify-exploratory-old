@@ -1,8 +1,6 @@
-restify-example
+Restify example
 ===============
-
-working through http://mcavage.me/node-restify/#server-api
-
+This is a set of my work-in-progress as I follow the [Restify guide](http://mcavage.me/node-restify/#server-api)
 
 Setup
 =====
